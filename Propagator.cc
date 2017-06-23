@@ -81,7 +81,7 @@ void Propagator::Propagate(int tag)
 		}
 		else
 		{
-			dndz = (GetIndex(this->_currentPosition.second)-GetIndex(this->_currentPosition.second-z0))/(_currentPosition.second-z0);
+			dndz = (GetIndex(this->_currentPosition.second)-GetIndex(this->_currentPosition.second-z0))/(z0); //Changed the denominator in this expression
 		}
 		dTheta = _timeStep*cos(_currentAngle)*dndz*c0/(n*n);
 		this->Update(dx,dz,dTheta);
